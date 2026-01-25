@@ -1,0 +1,82 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+.dart_tool/widget_preview_scaffold/pubspec.lock
+.dart_tool/widget_preview_scaffold/pubspec.yaml
+.dart_tool/widget_preview_scaffold/lib/src/generated_preview.dart
+.fvm/flutter_sdk
+.fvm/fvm_config.json
+build/ca33f282d90356a564f3e3da52c97351.cache.dill.track.dill
+build/app/intermediates/assets/debug/mergeDebugAssets/flutter_assets/kernel_blob.bin
+build/app/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/flutter_assets/kernel_blob.bin.jar
+build/app/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/jar_6c91158e2c8ce9497796c77108e6e37be0b5293e47a03c11dc60241408c2dd62_bucket_0/graph.bin
+build/app/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/jar_6c91158e2c8ce9497796c77108e6e37be0b5293e47a03c11dc60241408c2dd62_bucket_1/graph.bin
+build/app/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/jar_6c91158e2c8ce9497796c77108e6e37be0b5293e47a03c11dc60241408c2dd62_bucket_2/graph.bin
+build/app/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/jar_6c91158e2c8ce9497796c77108e6e37be0b5293e47a03c11dc60241408c2dd62_bucket_3/graph.bin
+build/app/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/jar_6c91158e2c8ce9497796c77108e6e37be0b5293e47a03c11dc60241408c2dd62_bucket_4/graph.bin
+build/app/intermediates/dex_archive_input_jar_hashes/debug/dexBuilderDebug/out
+build/app/intermediates/flutter/debug/.last_build_id
+build/app/intermediates/flutter/debug/flutter_build.d
+build/app/intermediates/flutter/debug/libs.jar
+build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin
+build/app/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties
+build/app/intermediates/incremental/debug/mergeDebugResources/merger.xml
+build/app/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
+build/app/intermediates/incremental/debug/packageDebugResources/merger.xml
+build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache/gtQt+2sh5RE4yzbixW96Y7Eu3aY=
+build/app/intermediates/incremental/mergeDebugAssets/merger.xml
+build/app/intermediates/incremental/mergeDebugJniLibFolders/merger.xml
+build/app/intermediates/incremental/mergeDebugShaders/merger.xml
+build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt
+build/app/intermediates/manifest_merge_blame_file/debug/processDebugMainManifest/manifest-merger-blame-debug-report.txt
+build/app/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/mergeDebugResources.json
+build/app/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-night-v8.json
+build/app/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values.json
+build/app/intermediates/source_set_path_map/debug/mapDebugSourceSetPaths/file-map.txt
+build/app/kotlin/compileDebugKotlin/cacheable/last-build.bin
+build/app/outputs/apk/debug/app-debug.apk
+build/app/outputs/flutter-apk/app-debug.apk
+build/app/outputs/flutter-apk/app-debug.apk.sha1
+build/app/outputs/logs/manifest-merger-debug-report.txt
