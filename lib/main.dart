@@ -12,10 +12,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MyHome());
+    return MaterialApp(home: MyHome());
   }
 }
+
 /// Material App
 /// Scaffold
 /// Container
@@ -24,3 +24,5 @@ class MyApp extends StatelessWidget {
 /// Row
 /// Column
 /// SizedBox
+/// CircleAvatar
+/// ListView.builder (for loop)

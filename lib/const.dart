@@ -1,4 +1,7 @@
 const avatar1 = "https://cdn-icons-png.flaticon.com/512/5556/5556468.png";
+const avatar2 =
+    "https://static.vecteezy.com/system/resources/previews/052/755/981/non_2x/a-man-profile-avatar-icon-with-a-white-background-free-vector.jpg";
+
 const nameList = [
   "Ahmed",
   "Mohamed",
@@ -8,6 +11,7 @@ const nameList = [
   "Alaa",
   "Ahmed",
   "Mohamed",
+  "Alaa",
   "Alaa",
 ];
 
@@ -35,4 +39,103 @@ const imageList = [
   "https://static.vecteezy.com/system/resources/previews/052/755/981/non_2x/a-man-profile-avatar-icon-with-a-white-background-free-vector.jpg",
   "https://cdn-icons-png.flaticon.com/512/5556/5556468.png",
   "https://static.vecteezy.com/system/resources/previews/052/755/981/non_2x/a-man-profile-avatar-icon-with-a-white-background-free-vector.jpg",
+];
+
+List<Map<String,dynamic>> chatsFromApi = [
+  {
+    "id": 0,
+    "name": "Ahmed",
+    "message_type": "text",
+    "image": avatar1,
+    "msg": "Hello, from Ahmed",
+    "created_at":"1:24PM"
+  },
+  {
+    "id": 1,
+    "name": "Mohamed",
+    "message_type": "video",
+    "image": avatar2,
+    "msg": null,
+    "created_at":"11:00 AM"
+  },
+  {
+    "id": 1,
+    "name": "Alaa",
+    "message_type": "gif",
+    "image": avatar2,
+    "msg": null,
+    "created_at":"1:24PM"
+  },
+    {
+    "id": 0,
+    "name": "Ahmed",
+    "message_type": "text",
+    "image": avatar1,
+    "msg": "Hello, from Ahmed",
+    "created_at":"1:24PM"
+  },
+  {
+    "id": 1,
+    "name": "Mohamed",
+    "message_type": "video",
+    "image": avatar2,
+    "msg": null,
+    "created_at":"1:24PM"
+  },
+  {
+    "id": 1,
+    "name": "Alaa",
+    "message_type": "gif",
+    "image": avatar2,
+    "msg": null,
+    "created_at":"1:24PM"
+  },
+    {
+    "id": 0,
+    "name": "Ahmed",
+    "message_type": "text",
+    "image": avatar1,
+    "msg": "Hello, from Ahmed",
+    "created_at":"1:24PM"
+  },
+  {
+    "id": 1,
+    "name": "Mohamed",
+    "message_type": "video",
+    "image": avatar2,
+    "msg": null,
+    "created_at":"1:24PM"
+  },
+  {
+    "id": 1,
+    "name": "Alaa",
+    "message_type": "gif",
+    "image": avatar2,
+    "msg": null,
+    "created_at":"1:24PM"
+  },
+    {
+    "id": 0,
+    "name": "Ahmed",
+    "message_type": "text",
+    "image": avatar1,
+    "msg": "Hello, from Ahmed",
+    "created_at":"1:24PM"
+  },
+  {
+    "id": 1,
+    "name": "Mohamed",
+    "message_type": "video",
+    "image": avatar2,
+    "msg": null,
+    "created_at":"1:24PM"
+  },
+  {
+    "id": 1,
+    "name": "Alaa",
+    "message_type": "gif",
+    "image": avatar2,
+    "msg": null,
+    "created_at":"1:24PM"
+  },
 ];

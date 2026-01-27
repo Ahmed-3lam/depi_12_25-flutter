@@ -1,3 +1,4 @@
+import 'package:depi_five/chat_model.dart';
 import 'package:depi_five/const.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -7,26 +8,43 @@ class MyHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<ChatModel> chats = chatsFromApi.map((e)=> ChatModel.fromJson(e)).toList();
+
+
+
+// chatsFromApi.forEach((element) => chats.add(ChatModel.fromJson(element)));
+    // for (var item in chatsFromApi) {
+    //   chats.add(ChatModel.fromJson(item));
+    // }
+    print(chats.toString());
     return Scaffold(
       appBar: _homeAppBar(),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.green,
+        onPressed: () {},
+        child: Icon(Icons.chat, color: Colors.white),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            customChat(icon: Icons.lock, text: "Locked Chats"),
-            SizedBox(height: 20),
-            customChat(icon: Icons.archive, text: "Archived", count: 20),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              customChat(icon: Icons.lock, text: "Locked Chats"),
+              SizedBox(height: 20),
+              customChat(icon: Icons.archive, text: "Archived", count: 20),
 
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: 7,
-              itemBuilder: (context, index) => myChat(
-                image: imageList[index],
-                name: nameList[index],
-                createdAt: createdAtList[index],
+              ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: nameList.length,
+                itemBuilder: (context, index) => myChat(
+                  image: chatsFromApi[index]["image"],
+                  name: chatsFromApi[index]["name"],
+                  createdAt: chatsFromApi[index]["created_at"],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
