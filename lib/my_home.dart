@@ -1,27 +1,23 @@
-import 'package:depi_five/chat_model.dart';
 import 'package:depi_five/const.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'chat_model.dart';
 
 class MyHome extends StatelessWidget {
   const MyHome({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List<ChatModel> chats = chatsFromApi.map((e)=> ChatModel.fromJson(e)).toList();
-
-
-
-// chatsFromApi.forEach((element) => chats.add(ChatModel.fromJson(element)));
-    // for (var item in chatsFromApi) {
-    //   chats.add(ChatModel.fromJson(item));
-    // }
-    print(chats.toString());
+    List<ChatModel> chats = chatsFromApi
+        .map((e) => ChatModel.fromJson(e))
+        .toList();
     return Scaffold(
       appBar: _homeAppBar(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green,
-        onPressed: () {},
+        onPressed: () {
+          print("Hello From First App");
+        },
         child: Icon(Icons.chat, color: Colors.white),
       ),
       body: Padding(
@@ -36,12 +32,8 @@ class MyHome extends StatelessWidget {
               ListView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
-                itemCount: nameList.length,
-                itemBuilder: (context, index) => myChat(
-                  image: chatsFromApi[index]["image"],
-                  name: chatsFromApi[index]["name"],
-                  createdAt: chatsFromApi[index]["created_at"],
-                ),
+                itemCount: chats.length,
+                itemBuilder: (context, index) => myChat(chats[index]),
               ),
             ],
           ),
@@ -63,11 +55,7 @@ Widget customChat({required IconData icon, required String text, int? count}) {
   );
 }
 
-Widget myChat({
-  required String image,
-  required String name,
-  required String createdAt,
-}) {
+Widget myChat(ChatModel model) {
   return Padding(
     padding: const EdgeInsets.only(top: 20),
     child: Row(
@@ -76,29 +64,44 @@ Widget myChat({
         CircleAvatar(
           radius: 30,
           backgroundColor: Colors.green,
-          backgroundImage: NetworkImage(image),
+          backgroundImage: NetworkImage(model.image ?? ""),
         ),
         SizedBox(width: 10),
         Column(
           crossAxisAlignment: .start,
           children: [
             Text(
-              name,
+              model.name ?? "",
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            Row(
-              children: [
-                Icon(CupertinoIcons.videocam_fill, color: Colors.grey),
-                Text("Video"),
-              ],
-            ),
+            msgBuilder(msgType: model.msgType!, msg: model.msg),
           ],
         ),
         Spacer(),
-        Text(createdAt),
+        Text(model.createdAt ?? ""),
       ],
     ),
   );
+}
+
+Widget msgBuilder({required MessageType msgType, String? msg}) {
+  if (msgType == MessageType.VIDEO) {
+    return Row(
+      children: [
+        Icon(CupertinoIcons.videocam_fill, color: Colors.grey),
+        Text("Video"),
+      ],
+    );
+  } else if (msgType == MessageType.GIF) {
+    return Row(
+      children: [
+        Icon(Icons.gif, color: Colors.grey),
+        Text("GIF"),
+      ],
+    );
+  } else {
+    return Text(msg ?? "");
+  }
 }
 
 AppBar _homeAppBar() {

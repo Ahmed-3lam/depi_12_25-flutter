@@ -14,7 +14,7 @@ const nameList = [
   "Alaa",
   "Alaa",
 ];
-
+const myColor = "";
 const createdAtList = [
   "1:30PM",
   "12:00AM",
@@ -41,38 +41,22 @@ const imageList = [
   "https://static.vecteezy.com/system/resources/previews/052/755/981/non_2x/a-man-profile-avatar-icon-with-a-white-background-free-vector.jpg",
 ];
 
-List<Map<String,dynamic>> chatsFromApi = [
-  {
-    "id": 0,
-    "name": "Ahmed",
-    "message_type": "text",
-    "image": avatar1,
-    "msg": "Hello, from Ahmed",
-    "created_at":"1:24PM"
-  },
-  {
-    "id": 1,
-    "name": "Mohamed",
-    "message_type": "video",
-    "image": avatar2,
-    "msg": null,
-    "created_at":"11:00 AM"
-  },
-  {
-    "id": 1,
-    "name": "Alaa",
-    "message_type": "gif",
-    "image": avatar2,
-    "msg": null,
-    "created_at":"1:24PM"
-  },
+List<Map<String, dynamic>> chatsFromApi = [
     {
+    "id": 1,
+    "name": "Mohamed",
+    "message_type": "video",
+    "image": avatar2,
+    "msg": null,
+    "created_at": "11:00 AM",
+  },
+  {
     "id": 0,
     "name": "Ahmed",
     "message_type": "text",
     "image": avatar1,
     "msg": "Hello, from Ahmed",
-    "created_at":"1:24PM"
+    "created_at": "1:24PM",
   },
   {
     "id": 1,
@@ -80,7 +64,7 @@ List<Map<String,dynamic>> chatsFromApi = [
     "message_type": "video",
     "image": avatar2,
     "msg": null,
-    "created_at":"1:24PM"
+    "created_at": "11:00 AM",
   },
   {
     "id": 1,
@@ -88,15 +72,15 @@ List<Map<String,dynamic>> chatsFromApi = [
     "message_type": "gif",
     "image": avatar2,
     "msg": null,
-    "created_at":"1:24PM"
+    "created_at": "1:24PM",
   },
-    {
+  {
     "id": 0,
     "name": "Ahmed",
     "message_type": "text",
     "image": avatar1,
     "msg": "Hello, from Ahmed",
-    "created_at":"1:24PM"
+    "created_at": "1:24PM",
   },
   {
     "id": 1,
@@ -104,7 +88,7 @@ List<Map<String,dynamic>> chatsFromApi = [
     "message_type": "video",
     "image": avatar2,
     "msg": null,
-    "created_at":"1:24PM"
+    "created_at": "1:24PM",
   },
   {
     "id": 1,
@@ -112,15 +96,15 @@ List<Map<String,dynamic>> chatsFromApi = [
     "message_type": "gif",
     "image": avatar2,
     "msg": null,
-    "created_at":"1:24PM"
+    "created_at": "1:24PM",
   },
-    {
+  {
     "id": 0,
     "name": "Ahmed",
     "message_type": "text",
     "image": avatar1,
     "msg": "Hello, from Ahmed",
-    "created_at":"1:24PM"
+    "created_at": "1:24PM",
   },
   {
     "id": 1,
@@ -128,7 +112,7 @@ List<Map<String,dynamic>> chatsFromApi = [
     "message_type": "video",
     "image": avatar2,
     "msg": null,
-    "created_at":"1:24PM"
+    "created_at": "1:24PM",
   },
   {
     "id": 1,
@@ -136,6 +120,30 @@ List<Map<String,dynamic>> chatsFromApi = [
     "message_type": "gif",
     "image": avatar2,
     "msg": null,
-    "created_at":"1:24PM"
+    "created_at": "1:24PM",
+  },
+  {
+    "id": 0,
+    "name": "Ahmed",
+    "message_type": "text",
+    "image": avatar1,
+    "msg": "Hello, from Ahmed",
+    "created_at": "1:24PM",
+  },
+  {
+    "id": 1,
+    "name": "Mohamed",
+    "message_type": "video",
+    "image": avatar2,
+    "msg": null,
+    "created_at": "1:24PM",
+  },
+  {
+    "id": 1,
+    "name": "Alaa",
+    "message_type": "gif",
+    "image": avatar2,
+    "msg": null,
+    "created_at": "1:24PM",
   },
 ];
