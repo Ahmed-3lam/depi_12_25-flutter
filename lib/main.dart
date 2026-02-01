@@ -1,5 +1,6 @@
-import 'package:depi_five/counter_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'bmi_calc.dart';
 
 
 void main() {
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: CounterScreen());
+    return MaterialApp(home: BmiCalc());
   }
 }
 
