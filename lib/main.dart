@@ -1,6 +1,6 @@
+import 'package:depi_five/counter_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'messanger/messanger_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: MessangerScreen());
+    return MaterialApp(home: CounterScreen());
   }
 }
 
@@ -25,3 +25,9 @@ class MyApp extends StatelessWidget {
 /// SizedBox
 /// CircleAvatar
 /// ListView.builder (for loop)
+/// ListView.separated (for loop)
+/// Expanded
+/// Spacer
+/// AppBar
+/// Icon
+
