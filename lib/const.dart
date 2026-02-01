@@ -42,22 +42,6 @@ const imageList = [
 ];
 
 List<Map<String, dynamic>> chatsFromApi = [
-    {
-    "id": 1,
-    "name": "Mohamed",
-    "message_type": "video",
-    "image": avatar2,
-    "msg": null,
-    "created_at": "11:00 AM",
-  },
-  {
-    "id": 0,
-    "name": "Ahmed",
-    "message_type": "text",
-    "image": avatar1,
-    "msg": "Hello, from Ahmed",
-    "created_at": "1:24PM",
-  },
   {
     "id": 1,
     "name": "Mohamed",
@@ -67,6 +51,22 @@ List<Map<String, dynamic>> chatsFromApi = [
     "created_at": "11:00 AM",
   },
   {
+    "id": 0,
+    "name": "Ahmed",
+    "message_type": "text",
+    "image": avatar1,
+    "msg": "Hello, from Ahmed",
+    "created_at": "1:24PM",
+  },
+  {
+    "id": 1,
+    "name": "Mohamed",
+    "message_type": "video",
+    "image": avatar2,
+    "msg": null,
+    "created_at": "11:00 AM",
+  },
+  {
     "id": 1,
     "name": "Alaa",
     "message_type": "gif",
@@ -146,4 +146,164 @@ List<Map<String, dynamic>> chatsFromApi = [
     "msg": null,
     "created_at": "1:24PM",
   },
+];
+List<Map<String, dynamic>> chatsFromApiMessanger = [
+  {
+    "id": 1,
+    "name": "Mohamed",
+    "image": avatar2,
+    "is_available": false,
+    "msg": "Hello, from Ahmed gfgffgfgfgfgggfggfgfgf",
+    "created_at": "11:00 AM",
+  },
+  {
+    "id": 0,
+    "name": "Ahmed",
+    "is_available": true,
+    "image": avatar1,
+    "msg":
+        "Hello, from Ahmed ggffgggffgfggfggfggggfggggfgfgfgfgfgfgfgfgffghghgghghghghghghhhg",
+    "created_at": "1:24PM",
+  },
+  
+  {
+    "id": 1,
+    "name": "Mohamed",
+    "image": avatar2,
+    "is_available": true,
+
+    "msg": "Hello, from Ahmed",
+    "created_at": "11:00 AM",
+  },
+   {
+    "id": 1,
+    "name": "Mohamed",
+    "image": avatar2,
+    "is_available": false,
+    "msg": "Hello, from Ahmed gfgffgfgfgfgggfggfgfgf",
+    "created_at": "11:00 AM",
+  },
+  {
+    "id": 0,
+    "name": "Ahmed",
+    "is_available": true,
+    "image": avatar1,
+    "msg":
+        "Hello, from Ahmed ggffgggffgfggfggfggggfggggfgfgfgfgfgfgfgfgffghghgghghghghghghhhg",
+    "created_at": "1:24PM",
+  },
+  {
+    "id": 1,
+    "name": "Mohamed",
+    "image": avatar2,
+    "is_available": true,
+
+    "msg": "Hello, from Ahmed",
+    "created_at": "11:00 AM",
+  },
+   {
+    "id": 1,
+    "name": "Mohamed",
+    "image": avatar2,
+    "is_available": false,
+    "msg": "Hello, from Ahmed gfgffgfgfgfgggfggfgfgf",
+    "created_at": "11:00 AM",
+  },
+  {
+    "id": 0,
+    "name": "Ahmed",
+    "is_available": true,
+    "image": avatar1,
+    "msg":
+        "Hello, from Ahmed ggffgggffgfggfggfggggfggggfgfgfgfgfgfgfgfgffghghgghghghghghghhhg",
+    "created_at": "1:24PM",
+  },
+  {
+    "id": 1,
+    "name": "Mohamed",
+    "image": avatar2,
+    "is_available": true,
+
+    "msg": "Hello, from Ahmed",
+    "created_at": "11:00 AM",
+  },
+   {
+    "id": 1,
+    "name": "Mohamed",
+    "image": avatar2,
+    "is_available": false,
+    "msg": "Hello, from Ahmed gfgffgfgfgfgggfggfgfgf",
+    "created_at": "11:00 AM",
+  },
+  {
+    "id": 0,
+    "name": "Ahmed",
+    "is_available": true,
+    "image": avatar1,
+    "msg":
+        "Hello, from Ahmed ggffgggffgfggfggfggggfggggfgfgfgfgfgfgfgfgffghghgghghghghghghhhg",
+    "created_at": "1:24PM",
+  },
+  {
+    "id": 1,
+    "name": "Mohamed",
+    "image": avatar2,
+    "is_available": true,
+
+    "msg": "Hello, from Ahmed",
+    "created_at": "11:00 AM",
+  },
+   {
+    "id": 1,
+    "name": "Mohamed",
+    "image": avatar2,
+    "is_available": false,
+    "msg": "Hello, from Ahmed gfgffgfgfgfgggfggfgfgf",
+    "created_at": "11:00 AM",
+  },
+  {
+    "id": 0,
+    "name": "Ahmed",
+    "is_available": true,
+    "image": avatar1,
+    "msg":
+        "Hello, from Ahmed ggffgggffgfggfggfggggfggggfgfgfgfgfgfgfgfgffghghgghghghghghghhhg",
+    "created_at": "1:24PM",
+  },
+  {
+    "id": 1,
+    "name": "Mohamed",
+    "image": avatar2,
+    "is_available": true,
+
+    "msg": "Hello, from Ahmed",
+    "created_at": "11:00 AM",
+  },
+   {
+    "id": 1,
+    "name": "Mohamed",
+    "image": avatar2,
+    "is_available": false,
+    "msg": "Hello, from Ahmed gfgffgfgfgfgggfggfgfgf",
+    "created_at": "11:00 AM",
+  },
+  {
+    "id": 0,
+    "name": "Ahmed",
+    "is_available": true,
+    "image": avatar1,
+    "msg":
+        "Hello, from Ahmed ggffgggffgfggfggfggggfggggfgfgfgfgfgfgfgfgffghghgghghghghghghhhg",
+    "created_at": "1:24PM",
+  },
+  {
+    "id": 1,
+    "name": "Mohamed",
+    "image": avatar2,
+    "is_available": true,
+
+    "msg": "Hello, from Ahmed",
+    "created_at": "11:00 AM",
+  },
+  
 ];

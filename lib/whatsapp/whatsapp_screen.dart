@@ -3,8 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'chat_model.dart';
 
-class MyHome extends StatelessWidget {
-  const MyHome({super.key});
+class WhatsAppScreen extends StatelessWidget {
+  const WhatsAppScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

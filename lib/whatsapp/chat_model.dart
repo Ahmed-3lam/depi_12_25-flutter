@@ -5,6 +5,7 @@ class ChatModel {
   String? image;
   String? msg;
   String? createdAt;
+  bool? isAvailable;
 
   ChatModel({
     this.id,
@@ -13,6 +14,7 @@ class ChatModel {
     this.msg,
     this.msgType,
     this.createdAt,
+    this.isAvailable,
   });
 
   ChatModel.fromJson(Map json) {
@@ -20,7 +22,8 @@ class ChatModel {
     name = json["name"];
     image = json["image"];
     msg = json["msg"];
-    msgType = getMsgType(json["message_type"]);
+    isAvailable = json["is_available"];
+    // msgType = getMsgType(json["message_type"]);
     createdAt = json["created_at"];
   }
 }
