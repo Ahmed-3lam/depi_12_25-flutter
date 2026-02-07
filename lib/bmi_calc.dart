@@ -18,6 +18,13 @@ class _BmiCalcState extends State<BmiCalc> {
   int width = 60;
   int age = 26;
 
+
+  @override
+  void didChangeDependencies() async{
+   
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,147 +41,162 @@ class _BmiCalcState extends State<BmiCalc> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(
-          mainAxisAlignment: .spaceEvenly,
-          children: [
-            Row(
-              children: [
-                /// 1x + 3 x = width
-                _typeWidget(Type.Male),
-                SizedBox(width: 10),
-                _typeWidget(Type.Female),
-              ],
-            ),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: primaryColor,
-                borderRadius: BorderRadius.circular(12),
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(
+                mainAxisAlignment: .spaceEvenly,
                 children: [
-                  Text("Height", style: CustomTextStyles.primaryTextStyle()),
                   Row(
-                    mainAxisAlignment: .center,
-                    crossAxisAlignment: .end,
                     children: [
-                      Text(
-                        height.toInt().toString(),
-                        style: TextStyle(fontSize: 40, color: Colors.white),
-                      ),
-                      Text("cm", style: TextStyle(color: Colors.white)),
+                      /// 1x + 3 x = width
+                      _typeWidget(Type.Male),
+                      SizedBox(width: 10),
+                      _typeWidget(Type.Female),
                     ],
                   ),
-                  Slider(
-                    min: 40,
-                    max: 200,
-                    value: height,
-                    onChanged: (val) {
-                      height = val;
-                      setState(() {});
-                    },
+                  Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: primaryColor,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          "Height",
+                          style: CustomTextStyles.primaryTextStyle(),
+                        ),
+                        Row(
+                          mainAxisAlignment: .center,
+                          crossAxisAlignment: .end,
+                          children: [
+                            Text(
+                              height.toInt().toString(),
+                              style: TextStyle(
+                                fontSize: 40,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text("cm", style: TextStyle(color: Colors.white)),
+                          ],
+                        ),
+                        Slider(
+                          min: 40,
+                          max: 200,
+                          value: height,
+                          onChanged: (val) {
+                            height = val;
+                            setState(() {});
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          padding: EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: primaryColor,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Weight",
+                                style: CustomTextStyles.primaryTextStyle(),
+                              ),
+                              Text(
+                                width.toString(),
+                                style: TextStyle(
+                                  fontSize: 40,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Row(
+                                children: [
+                                  FloatingActionButton(
+                                    mini: true,
+                                    shape: CircleBorder(),
+
+                                    onPressed: () {
+                                      width--;
+                                      setState(() {});
+                                    },
+                                    child: Icon(Icons.remove),
+                                  ),
+                                  Spacer(),
+                                  FloatingActionButton(
+                                    mini: true,
+                                    shape: CircleBorder(),
+                                    onPressed: () {
+                                      width++;
+                                      setState(() {});
+                                    },
+                                    child: Icon(Icons.add),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
+                      SizedBox(width: 10),
+                      Expanded(
+                        child: Container(
+                          padding: EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: primaryColor,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Age",
+                                style: CustomTextStyles.primaryTextStyle(),
+                              ),
+                              Text(
+                                age.toString(),
+                                style: TextStyle(
+                                  fontSize: 40,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Row(
+                                children: [
+                                  FloatingActionButton(
+                                    mini: true,
+                                    shape: CircleBorder(),
+
+                                    onPressed: () {
+                                      age--;
+                                      setState(() {});
+                                    },
+                                    child: Icon(Icons.remove),
+                                  ),
+                                  Spacer(),
+                                  FloatingActionButton(
+                                    mini: true,
+                                    shape: CircleBorder(),
+                                    onPressed: () {
+                                      age++;
+                                      setState(() {});
+                                    },
+                                    child: Icon(Icons.add),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
-            Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    padding: EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      color: primaryColor,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      children: [
-                        Text(
-                          "Weight",
-                          style: CustomTextStyles.primaryTextStyle(),
-                        ),
-                        Text(
-                          width.toString(),
-                          style: TextStyle(fontSize: 40, color: Colors.white),
-                        ),
-                        Row(
-                          children: [
-                            FloatingActionButton(
-                              mini: true,
-                              shape: CircleBorder(),
-
-                              onPressed: () {
-                                width--;
-                                setState(() {});
-                              },
-                              child: Icon(Icons.remove),
-                            ),
-                            Spacer(),
-                            FloatingActionButton(
-                              mini: true,
-                              shape: CircleBorder(),
-                              onPressed: () {
-                                width++;
-                                setState(() {});
-                              },
-                              child: Icon(Icons.add),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-
-                SizedBox(width: 10),
-                Expanded(
-                  child: Container(
-                    padding: EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      color: primaryColor,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      children: [
-                        Text("Age", style: CustomTextStyles.primaryTextStyle()),
-                        Text(
-                          age.toString(),
-                          style: TextStyle(fontSize: 40, color: Colors.white),
-                        ),
-                        Row(
-                          children: [
-                            FloatingActionButton(
-                              mini: true,
-                              shape: CircleBorder(),
-
-                              onPressed: () {
-                                age--;
-                                setState(() {});
-                              },
-                              child: Icon(Icons.remove),
-                            ),
-                            Spacer(),
-                            FloatingActionButton(
-                              mini: true,
-                              shape: CircleBorder(),
-                              onPressed: () {
-                                age++;
-                                setState(() {});
-                              },
-                              child: Icon(Icons.add),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
       bottomNavigationBar: InkWell(
         onTap: () async {
           double bmi = width / ((height / 100) * (height / 100));
@@ -212,7 +234,6 @@ class _BmiCalcState extends State<BmiCalc> {
             ),
           ),
         ),
-  
       ),
     );
   }
