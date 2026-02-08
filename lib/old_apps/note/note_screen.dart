@@ -1,4 +1,4 @@
-import 'package:depi_five/note/note_hive_helper.dart';
+import 'package:depi_five/old_apps/note/note_hive_helper.dart';
 import 'package:flutter/material.dart';
 
 class NoteScreen extends StatefulWidget {

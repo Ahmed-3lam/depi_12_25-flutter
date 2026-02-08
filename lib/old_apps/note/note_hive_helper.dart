@@ -28,9 +28,10 @@ class NoteHiveHelper {
 
   static Future<void> getAllNote() async {
     notes = await Hive.box(noteBox).get(noteKey);
-   await Future.delayed(Duration(seconds: 3));
   }
 }
+
+var sql = "SELECT * ";
 
 
 ///(1) Add Note

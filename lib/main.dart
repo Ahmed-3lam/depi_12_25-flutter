@@ -1,9 +1,12 @@
-import 'package:depi_five/note/note_hive_helper.dart';
-import 'package:depi_five/note/note_screen.dart';
+import 'package:depi_five/old_apps/note/note_hive_helper.dart';
+import 'package:depi_five/old_apps/note/note_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
+import 'ecommerce_app/splash/splash_screen.dart';
 import 'old_apps/bmi_calc.dart';
 
 void main() async {
@@ -12,7 +15,7 @@ void main() async {
   // Initialize Hive
   await Hive.initFlutter();
   await Hive.openBox(NoteHiveHelper.noteBox);
-
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(const MyApp());
 }
 
@@ -21,7 +24,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: NoteScreen());
+    return GetMaterialApp(home: SplashScreen());
   }
 }
 
