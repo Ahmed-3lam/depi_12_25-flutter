@@ -3,6 +3,7 @@ import 'dart:ui';
 const backgroundColor = Color(0xFF40AA54);
 
 const primaryColor = Color(0xFF24263B);
+const imagePath = "assets/images/";
 
 const titles = [
   "Browse all the category",
