@@ -4,25 +4,40 @@ import 'package:flutter/widgets.dart';
 
 class CustomBtn extends StatelessWidget {
   final String title;
+  final Color color;
+  final double height;
   final void Function()? onTap;
-  const CustomBtn({super.key,required this.title,this.onTap});
+  final bool isLoading;
+  const CustomBtn({
+    super.key,
+    required this.title,
+    this.onTap,
+    this.color = backgroundColor,
+    this.height = 56,
+    this.isLoading = false,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
       child: Container(
-        height: 56,
+        height: height,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: backgroundColor,
+          color: color,
           borderRadius: BorderRadius.circular(15),
         ),
         child: Center(
-          child: Text(
-            title,
-            style: TextStyle(color: Colors.white, fontSize: 16),
-          ),
+          child: isLoading
+              ? Center(child: CircularProgressIndicator(color: Colors.white))
+              : Text(
+                  title,
+                  style: TextStyle(
+                    color: color == backgroundColor ? Colors.white : null,
+                    fontSize: 16,
+                  ),
+                ),
         ),
       ),
     );

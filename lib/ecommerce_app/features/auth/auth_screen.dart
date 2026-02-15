@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:depi_five/const.dart';
+import 'package:depi_five/ecommerce_app/core/widgets/custom_btn.dart';
 import 'package:depi_five/ecommerce_app/features/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -42,6 +43,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.sizeOf(context).height;
     return Scaffold(
       body: Stack(
         children: [
@@ -75,39 +77,19 @@ class _AuthScreenState extends State<AuthScreen> {
                   ),
                 ),
                 Spacer(),
-                InkWell(
+                CustomBtn(
+                  title: "Continue with Email or Phone",
                   onTap: () {
                     Get.to(LoginScreen());
                   },
-                  child: Container(
-                    height: 56,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: backgroundColor,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Continue with Email or Phone",
-                        style: TextStyle(color: Colors.white, fontSize: 16),
-                      ),
-                    ),
-                  ),
+                  height: height * .08,
                 ),
                 SizedBox(height: 10),
-                Container(
-                  height: 56,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Create an account",
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ),
+                CustomBtn(
+                  title: "Create an account",
+                  onTap: null,
+                  color: Colors.white,
+                  height: height * .08,
                 ),
               ],
             ),

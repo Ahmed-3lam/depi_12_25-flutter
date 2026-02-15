@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:depi_five/const.dart';
 import 'package:depi_five/ecommerce_app/core/helpers/hive_helper.dart';
 import 'package:depi_five/ecommerce_app/features/auth/auth_screen.dart';
+import 'package:depi_five/ecommerce_app/features/home/home_screen.dart';
 import 'package:depi_five/ecommerce_app/features/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -27,7 +28,9 @@ class _SplashScreenState extends State<SplashScreen> {
       if (_start == 0) {
         setState(() {
           timer.cancel();
-          if (HiveHelper.getOnboardingBoxValue() == true) {
+          if (HiveHelper.getLoginBox() ==true) {
+            Get.off(HomeScreen());
+          } else if (HiveHelper.getOnboardingBoxValue() == true) {
             Get.off(AuthScreen());
           } else {
             Get.off(OnboardingScreen());
