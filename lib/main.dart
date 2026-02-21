@@ -1,9 +1,12 @@
+import 'package:depi_five/old_apps/counter/counter_screen.dart';
+import 'package:depi_five/old_apps/counter/cubit/cubit/counter_cubit.dart';
 import 'package:depi_five/old_apps/note/note_hive_helper.dart';
 import 'package:depi_five/old_apps/note/note_screen.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -30,7 +33,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(useInheritedMediaQuery: true, home: SplashScreen());
+    return BlocProvider(
+      create: (context) => CounterCubit(),
+      child: GetMaterialApp(
+        useInheritedMediaQuery: true,
+        home: CounterScreen(),
+      ),
+    );
   }
 }
 

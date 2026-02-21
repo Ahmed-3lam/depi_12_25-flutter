@@ -80,9 +80,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       title: "Login",
                       isLoading: _isLoading,
                       onTap: () async {
-                        _isLoading = true;
-                        setState(() {});
                         if (_formkey.currentState!.validate()) {
+                          _isLoading = true;
+                          setState(() {});
                           await Future.delayed(Duration(seconds: 3));
                           if (_emailController.text == "ahmed@gmail.com" &&
                               _passwordController.text == "123456") {
