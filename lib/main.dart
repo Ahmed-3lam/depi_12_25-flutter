@@ -1,5 +1,6 @@
 import 'package:depi_five/old_apps/counter/counter_screen.dart';
 import 'package:depi_five/old_apps/counter/cubit/cubit/counter_cubit.dart';
+import 'package:depi_five/old_apps/note/cubit/cubit/note_cubit.dart';
 import 'package:depi_five/old_apps/note/note_hive_helper.dart';
 import 'package:depi_five/old_apps/note/note_screen.dart';
 import 'package:device_preview/device_preview.dart';
@@ -34,10 +35,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => CounterCubit(),
+      create: (context) => NoteCubit()..getNotes(),
       child: GetMaterialApp(
         useInheritedMediaQuery: true,
-        home: CounterScreen(),
+        home: NoteScreen(),
       ),
     );
   }
