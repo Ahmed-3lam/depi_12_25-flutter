@@ -1,3 +1,4 @@
+import 'package:depi_five/ecommerce_app/features/auth/cubit/cubit/auth_cubit.dart';
 import 'package:depi_five/old_apps/counter/counter_screen.dart';
 import 'package:depi_five/old_apps/counter/cubit/cubit/counter_cubit.dart';
 import 'package:depi_five/old_apps/note/cubit/cubit/note_cubit.dart';
@@ -35,10 +36,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => NoteCubit()..getNotes(),
+      create: (context) => AuthCubit(),
       child: GetMaterialApp(
         useInheritedMediaQuery: true,
-        home: NoteScreen(),
+        home: SplashScreen(),
       ),
     );
   }

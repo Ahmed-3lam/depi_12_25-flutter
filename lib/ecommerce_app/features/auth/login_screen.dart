@@ -2,24 +2,17 @@ import 'package:depi_five/const.dart';
 import 'package:depi_five/ecommerce_app/core/extension/email_validation.dart';
 import 'package:depi_five/ecommerce_app/core/helpers/hive_helper.dart';
 import 'package:depi_five/ecommerce_app/core/widgets/custom_btn.dart';
+import 'package:depi_five/ecommerce_app/features/auth/cubit/cubit/auth_cubit.dart';
 import 'package:depi_five/ecommerce_app/features/auth/widgets/custom_textfield.dart';
 import 'package:depi_five/ecommerce_app/features/home/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
-
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
-  bool isObscure = true;
+class LoginScreen extends StatelessWidget {
   final _formkey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  bool _isLoading = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,28 +69,20 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: [Text("Forget Password?")],
                     ),
                     SizedBox(height: 20),
-                    CustomBtn(
-                      title: "Login",
-                      isLoading: _isLoading,
-                      onTap: () async {
-                        if (_formkey.currentState!.validate()) {
-                          _isLoading = true;
-                          setState(() {});
-                          await Future.delayed(Duration(seconds: 3));
-                          if (_emailController.text == "ahmed@gmail.com" &&
-                              _passwordController.text == "123456") {
-                            HiveHelper.setLoginBox();
-                            Get.offAll(HomeScreen());
-                          } else {
-                            Get.snackbar(
-                              "Error",
-                              "Your credintials isn't correct",
-                              backgroundColor: Colors.red,
-                            );
-                          }
-                          _isLoading = false;
-                          setState(() {});
-                        }
+                    BlocBuilder<AuthCubit, AuthState>(
+                      builder: (context, state) {
+                        return CustomBtn(
+                          title: "Login",
+                          isLoading: state is AuthLoadingState,
+                          onTap: () async {
+                            if (_formkey.currentState!.validate()) {
+                              context.read<AuthCubit>().login(
+                                email: _emailController.text,
+                                password: _passwordController.text,
+                              );
+                            }
+                          },
+                        );
                       },
                     ),
                   ],
