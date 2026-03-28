@@ -1,5 +1,6 @@
 import 'package:depi_five/ecommerce_app/core/network/dio_helper.dart';
 import 'package:depi_five/ecommerce_app/features/auth/cubit/cubit/auth_cubit.dart';
+import 'package:depi_five/ecommerce_app/features/home/cubit/cubit/home_cubit.dart';
 import 'package:depi_five/old_apps/counter/counter_screen.dart';
 import 'package:depi_five/old_apps/counter/cubit/cubit/counter_cubit.dart';
 import 'package:depi_five/old_apps/note/cubit/cubit/note_cubit.dart';
@@ -10,6 +11,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -20,7 +22,7 @@ import 'old_apps/bmi_calc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  await ScreenUtil.ensureScreenSize();
   await Hive.initFlutter();
   await Hive.openBox(NoteHiveHelper.noteBox);
   await Hive.openBox(HiveHelper.onboardingBox);
@@ -36,9 +38,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => AuthCubit(),
-      child: GetMaterialApp(useInheritedMediaQuery: true, home: SplashScreen()),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (BuildContext context) => AuthCubit()),
+        BlocProvider(create: (BuildContext context) => HomeCubit()..getBanners()..getItems()),
+      ],
+
+      child: ScreenUtilInit(
+        // Use builder only if you need to use library outside ScreenUtilInit context
+        builder: (_, child) {
+          return GetMaterialApp(
+            useInheritedMediaQuery: true,
+            home: SplashScreen(),
+          );
+        },
+      ),
     );
   }
 }
