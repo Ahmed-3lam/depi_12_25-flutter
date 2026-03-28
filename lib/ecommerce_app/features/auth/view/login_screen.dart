@@ -1,13 +1,10 @@
 import 'package:depi_five/const.dart';
 import 'package:depi_five/ecommerce_app/core/extension/email_validation.dart';
-import 'package:depi_five/ecommerce_app/core/helpers/hive_helper.dart';
 import 'package:depi_five/ecommerce_app/core/widgets/custom_btn.dart';
 import 'package:depi_five/ecommerce_app/features/auth/cubit/cubit/auth_cubit.dart';
-import 'package:depi_five/ecommerce_app/features/auth/widgets/custom_textfield.dart';
-import 'package:depi_five/ecommerce_app/features/home/home_screen.dart';
+import 'package:depi_five/ecommerce_app/features/auth/view/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 
 class LoginScreen extends StatelessWidget {
   final _formkey = GlobalKey<FormState>();
@@ -42,7 +39,6 @@ class LoginScreen extends StatelessWidget {
                     CustomTextfield(
                       controller: _emailController,
                       title: "Email",
-                      label: "Email",
                       prefixIcon: Icon(Icons.email),
                       validator: (value) {
                         if (!value!.emailValid()) {
@@ -98,7 +94,7 @@ class LoginScreen extends StatelessWidget {
 
 
 
-/// (1) validator function in textformField
-/// (2)  Create Form Widget above all the TextFormFields
-/// (3) create key for this form widget
-/// (4) _formkey.currentState!.validate()
+
+
+/// MVC ( Model - view - controller)
+/// MVVM (Model - View - ViewModel)

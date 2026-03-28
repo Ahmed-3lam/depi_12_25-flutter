@@ -1,5 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:depi_five/ecommerce_app/core/helpers/hive_helper.dart';
+import 'package:depi_five/ecommerce_app/core/network/dio_helper.dart';
+import 'package:depi_five/ecommerce_app/core/network/k_apis.dart';
+import 'package:depi_five/ecommerce_app/features/auth/model/login_model.dart';
 import 'package:depi_five/ecommerce_app/features/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,18 +15,22 @@ class AuthCubit extends Cubit<AuthState> {
 
   void login({required String email, required String password}) async {
     emit(AuthLoadingState());
-    await Future.delayed(Duration(seconds: 3));
-    if (email == "ahmed@gmail.com" && password == "123456") {
-      HiveHelper.setLoginBox();
-      Get.offAll(HomeScreen());
-      //Success
-      emit(AuthSuccessState());
-    } else {
-      Get.snackbar(
-        "Error",
-        "Your credintials isn't correct",
-        backgroundColor: Colors.red,
+    try {
+      final response = await DioHelper.postData(
+        KApis.login,
+        body: {"email": email, "password": password},
       );
+      final loginModel = LoginModel.fromJson(response.data);
+      if (loginModel.statusCode == 200) {
+        HiveHelper.setTokenBox(loginModel.data!.token!);
+        Get.offAll(HomeScreen());
+        emit(AuthSuccessState());
+      } else {
+        Get.snackbar("Error", loginModel.message!, backgroundColor: Colors.red);
+        emit(AuthErrorState());
+      }
+    } catch (e) {
+      Get.snackbar("Error", e.toString(), backgroundColor: Colors.red);
       emit(AuthErrorState());
     }
   }

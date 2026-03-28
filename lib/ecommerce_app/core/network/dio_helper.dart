@@ -19,7 +19,6 @@ class DioHelper {
     Map<String, dynamic>? body,
   }) async {
     final response = await _dio.post(path, data: body);
-
     return response;
   }
 }

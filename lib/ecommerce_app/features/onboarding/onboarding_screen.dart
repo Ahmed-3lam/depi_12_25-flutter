@@ -1,5 +1,5 @@
 import 'package:depi_five/const.dart';
-import 'package:depi_five/ecommerce_app/features/auth/auth_screen.dart';
+import 'package:depi_five/ecommerce_app/features/auth/view/auth_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

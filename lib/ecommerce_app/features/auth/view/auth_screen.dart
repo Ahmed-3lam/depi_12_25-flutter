@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:depi_five/const.dart';
 import 'package:depi_five/ecommerce_app/core/widgets/custom_btn.dart';
-import 'package:depi_five/ecommerce_app/features/auth/login_screen.dart';
+import 'package:depi_five/ecommerce_app/features/auth/view/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

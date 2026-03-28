@@ -1,9 +1,10 @@
+import 'package:depi_five/ecommerce_app/core/network/dio_helper.dart';
 import 'package:depi_five/ecommerce_app/features/auth/cubit/cubit/auth_cubit.dart';
 import 'package:depi_five/old_apps/counter/counter_screen.dart';
 import 'package:depi_five/old_apps/counter/cubit/cubit/counter_cubit.dart';
 import 'package:depi_five/old_apps/note/cubit/cubit/note_cubit.dart';
 import 'package:depi_five/old_apps/note/note_hive_helper.dart';
-import 'package:depi_five/old_apps/note/note_screen.dart';
+
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -20,11 +21,11 @@ import 'old_apps/bmi_calc.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize Hive
   await Hive.initFlutter();
   await Hive.openBox(NoteHiveHelper.noteBox);
   await Hive.openBox(HiveHelper.onboardingBox);
-  await Hive.openBox(HiveHelper.loginBox);
+  await Hive.openBox(HiveHelper.tokenBox);
+  DioHelper.init();
 
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(DevicePreview(enabled: !kReleaseMode, builder: (context) => MyApp()));
@@ -37,26 +38,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => AuthCubit(),
-      child: GetMaterialApp(
-        useInheritedMediaQuery: true,
-        home: SplashScreen(),
-      ),
+      child: GetMaterialApp(useInheritedMediaQuery: true, home: SplashScreen()),
     );
   }
 }
-
-/// Material App
-/// Scaffold
-/// Container
-/// Text
-/// Center
-/// Row
-/// Column
-/// SizedBox
-/// CircleAvatar
-/// ListView.builder (for loop)
-/// ListView.separated (for loop)
-/// Expanded
-/// Spacer
-/// AppBar
-/// Icon
