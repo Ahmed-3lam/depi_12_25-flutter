@@ -1,7 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:depi_five/const.dart';
 import 'package:depi_five/ecommerce_app/features/home/cubit/cubit/home_cubit.dart';
-import 'package:depi_five/ecommerce_app/features/home/models/banner_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -188,4 +186,5 @@ class _HomeScreenState extends State<HomeScreen> {
       ],
     );
   }
+
 }

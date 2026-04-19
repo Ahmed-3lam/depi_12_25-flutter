@@ -17,8 +17,13 @@ class DioHelper {
   static Future<Response> postData(
     String path, {
     Map<String, dynamic>? body,
+    Map<String, dynamic>? queryParameters,
   }) async {
-    final response = await _dio.post(path, data: body);
+    final response = await _dio.post(
+      path,
+      data: body,
+      queryParameters: queryParameters,
+    );
     return response;
   }
 }
